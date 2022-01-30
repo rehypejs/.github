@@ -40,9 +40,12 @@ body:
       description: |
         Link to repository or sandbox with runnable example of the issue.
 
-        Some CodeSandbox starters:
-        - [rehype](https://codesandbox.io/s/rehype-debug-po7c5) (for html to html, with parse5)
-        - [rehype-dom](https://codesandbox.io/s/rehype-dom-debug-vqcgs) (for html to html, with browser DOM)
+        Some starters:
+
+        | description | codesandbox | stackblitz |
+        | - | - | - |
+        | rehype (for html to html, with parse5) | [codesandbox](https://codesandbox.io/s/github/rehypejs/.github/tree/main/sandbox-templates/rehype-debug) | [stackblitz](https://stackblitz.com/github/rehypejs/.github/tree/main/sandbox-templates/rehype-debug) |
+        | rehype-dom (for html to html, with browser DOM) | [codesandbox](https://codesandbox.io/s/github/rehypejs/.github/tree/main/sandbox-templates/rehype-dom-debug) | [stackblitz](https://stackblitz.com/github/rehypejs/.github/tree/main/sandbox-templates/rehype-dom-debug) |
 
         Alternatively, use the next section *Steps to reproduce*.
     validations:

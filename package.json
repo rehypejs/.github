@@ -9,7 +9,8 @@
   "bugs": "https://github.com/rehypejs/.github",
   "author": "Titus Wormer <tituswormer@gmail.com> (wooorm.com)",
   "contributors": [
-    "Titus Wormer <tituswormer@gmail.com> (wooorm.com)"
+    "Titus Wormer <tituswormer@gmail.com> (wooorm.com)",
+    "Christian Murphy (https://github.com/ChristianMurphy)"
   ],
   "devDependencies": {
     "remark-cli": "^10.0.0",
