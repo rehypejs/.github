@@ -104,7 +104,7 @@ body:
         - npm 8
         - npm 7
         - npm 6
-        - yarn 2
+        - yarn 3
         - yarn 1
         - pnpm
         - Other (please specify in steps to reproduce)
