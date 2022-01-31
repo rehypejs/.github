@@ -6,8 +6,11 @@
 import { rehypeDom } from "rehype-dom";
 
 const sourceHtml = `
+<!doctype html>
 <html>
-  <head></head>
+  <head>
+    <title>sandbox document</title>
+  </head>
   <body>
     <h1>title</h1>
     <p>lorem ipsum</p>
