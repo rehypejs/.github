@@ -3,7 +3,7 @@
 // On stackblitz, you can open the package.json file, update the versions,
 // then run npm install in the stackblitz terminal
 
-import { rehypeDom } from "rehype-dom";
+import {rehypeDom} from 'rehype-dom'
 
 const sourceHtml = `
 <!doctype html>
@@ -16,15 +16,20 @@ const sourceHtml = `
     <p>lorem ipsum</p>
   </body>
 </html>
-`;
+`
 
-document.getElementById("source").textContent = sourceHtml;
+async function main() {
+  document.querySelector('#source').textContent = sourceHtml
 
-rehypeDom()
-  .use({ settings: { fragment: false } })
-  // add any plugins here
-  .process(sourceHtml)
-  .then(
-    (file) => (document.getElementById("result").textContent = String(file))
-  )
-  .catch((err) => (document.getElementById("error").innerHTML = err));
+  rehypeDom()
+    .use({settings: {fragment: false}})
+    // Add any plugins here
+    .process(sourceHtml)
+    .then((file) => {
+      document.querySelector('#result').textContent = String(file)
+    })
+}
+
+main().catch((error) => {
+  document.querySelector('#error').innerHTML = error
+})
