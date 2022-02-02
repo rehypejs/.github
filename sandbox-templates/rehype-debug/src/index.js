@@ -9,6 +9,7 @@ const sourceHtml = `
 <!doctype html>
 <html>
   <head>
+    <meta charset="utf-8">
     <title>sandbox document</title>
   </head>
   <body>
@@ -30,5 +31,5 @@ async function main() {
 }
 
 main().catch((error) => {
-  document.querySelector('#error').innerHTML = error
+  document.querySelector('#error').textContent = error
 })
