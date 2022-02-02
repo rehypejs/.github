@@ -1,0 +1,16 @@
+{
+  "name": "rehype-dom-debug",
+  "version": "1.0.0",
+  "private": true,
+  "source": "index.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "dependencies": {
+    "rehype-dom": "6.0.1"
+  },
+  "devDependencies": {
+    "parcel": "2.2.1"
+  }
+}
