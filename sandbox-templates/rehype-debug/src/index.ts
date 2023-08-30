@@ -19,17 +19,14 @@ const sourceHtml = `
 </html>
 `
 
-async function main() {
-  document.querySelector('#source').textContent = sourceHtml
+try {
+  document.querySelector('#source')!.textContent = sourceHtml
 
-  rehype()
+  const file = await rehype()
     // Add any plugins here
     .process(sourceHtml)
-    .then((file) => {
-      document.querySelector('#result').textContent = String(file)
-    })
-}
 
-main().catch((error) => {
-  document.querySelector('#error').textContent = error
-})
+  document.querySelector('#result')!.textContent = String(file)
+} catch (error) {
+  document.querySelector('#error')!.textContent = String(error)
+}

@@ -2,15 +2,16 @@
   "name": "rehype-dom-debug",
   "version": "1.0.0",
   "private": true,
-  "source": "index.html",
+  "main": "src/index.ts",
+  "type": "module",
   "scripts": {
-    "start": "parcel",
-    "build": "parcel build"
+    "start": "tsc && vite"
   },
   "dependencies": {
-    "rehype-dom": "6.0.1"
+    "rehype-dom": "^6.0.0"
   },
   "devDependencies": {
-    "parcel": "2.2.1"
+    "typescript": "^5.0.0",
+    "vite": "^4.0.0"
   }
 }

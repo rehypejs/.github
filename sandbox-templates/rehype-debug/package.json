@@ -1,17 +1,18 @@
 {
   "name": "rehype-debug",
   "version": "1.0.0",
-  "license": "MIT",
   "private": true,
-  "source": "index.html",
+  "license": "MIT",
+  "type": "module",
+  "main": "src/index.ts",
   "scripts": {
-    "start": "parcel",
-    "build": "parcel build"
+    "start": "tsc && vite"
   },
   "dependencies": {
-    "rehype": "12.0.1"
+    "rehype": "^13.0.0"
   },
   "devDependencies": {
-    "parcel": "2.2.1"
+    "typescript": "^5.0.0",
+    "vite": "^4.0.0"
   }
 }

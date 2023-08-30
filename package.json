@@ -12,13 +12,17 @@
     "Titus Wormer <tituswormer@gmail.com> (wooorm.com)",
     "Christian Murphy (https://github.com/ChristianMurphy)"
   ],
+  "workspaces": [
+    "sandbox-templates/rehype-debug",
+    "sandbox-templates/rehype-dom-debug"
+  ],
   "devDependencies": {
-    "eslint-config-xo-react": "^0.26.0",
-    "prettier": "^2.0.0",
-    "remark-cli": "^10.0.0",
+    "eslint-config-xo-react": "^0.27.0",
+    "prettier": "^3.0.0",
+    "remark-cli": "^11.0.0",
     "remark-frontmatter": "^4.0.0",
     "remark-preset-wooorm": "^9.0.0",
-    "xo": "^0.47.0"
+    "xo": "^0.56.0"
   },
   "scripts": {
     "format": "remark . -qfo && prettier . -w --loglevel warn && xo --fix",
