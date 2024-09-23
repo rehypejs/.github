@@ -13,8 +13,8 @@
     "Christian Murphy (https://github.com/ChristianMurphy)"
   ],
   "workspaces": [
-    "sandbox-templates/rehype-debug",
-    "sandbox-templates/rehype-dom-debug"
+    "sandbox-templates/rehype-debug/",
+    "sandbox-templates/rehype-dom-debug/"
   ],
   "devDependencies": {
     "eslint-config-xo-react": "^0.27.0",
@@ -29,29 +29,12 @@
     "test": "npm run format"
   },
   "prettier": {
-    "tabWidth": 2,
-    "useTabs": false,
-    "singleQuote": true,
     "bracketSpacing": false,
     "semi": false,
-    "trailingComma": "none"
-  },
-  "xo": {
-    "extends": "xo-react",
-    "prettier": true,
-    "env": [
-      "browser"
-    ],
-    "overrides": [
-      {
-        "files": [
-          "sandbox-templates/**/*.tsx"
-        ],
-        "rules": {
-          "@typescript-eslint/naming-convention": "off"
-        }
-      }
-    ]
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "none",
+    "useTabs": false
   },
   "remarkConfig": {
     "plugins": [
@@ -62,5 +45,22 @@
         false
       ]
     ]
+  },
+  "xo": {
+    "env": [
+      "browser"
+    ],
+    "extends": "xo-react",
+    "overrides": [
+      {
+        "files": [
+          "sandbox-templates/**/*.tsx"
+        ],
+        "rules": {
+          "@typescript-eslint/naming-convention": "off"
+        }
+      }
+    ],
+    "prettier": true
   }
 }
