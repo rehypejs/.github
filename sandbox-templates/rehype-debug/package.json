@@ -5,14 +5,14 @@
   "license": "MIT",
   "type": "module",
   "main": "src/index.ts",
-  "scripts": {
-    "start": "tsc && vite"
-  },
   "dependencies": {
     "rehype": "^13.0.0"
   },
   "devDependencies": {
     "typescript": "^5.0.0",
     "vite": "^5.0.0"
+  },
+  "scripts": {
+    "start": "tsc && vite"
   }
 }
