@@ -1,19 +1,14 @@
-name: 🐛 Bug report
-description: Describe a problem
-
 body:
-  - type: markdown
-    attributes:
+  - attributes:
       value: |
         Some general tips:
 
-        - Is this really a problem?
-        - Is this a problem here?
-        - Can this be solved in a different way?
-
-  - type: checkboxes
-    id: initial-checklist
-    attributes:
+        * is this really a problem?
+        * is this a problem here?
+        * can this be solved in a different way?
+        * can this be contributed as a PR with a failing test instead?
+    type: markdown
+  - attributes:
       label: Initial checklist
       options:
         - label: I read the [support docs](https://github.com/rehypejs/.github/blob/main/support.md)
@@ -22,127 +17,112 @@ body:
           required: true
         - label: I agree to follow the [code of conduct](https://github.com/rehypejs/.github/blob/main/code-of-conduct.md)
           required: true
-        - label: I searched [issues](https://github.com/search?q=user%3Arehypejs&type=Issues) and couldn’t find anything (or linked relevant results below)
+        - label: I searched [issues](https://github.com/search?q=user%3Arehypejs&type=issues) and [discussions](https://github.com/orgs/rehypejs/discussions) and couldn’t find anything (or linked relevant results below)
           required: true
-
-  - type: input
+    id: initial-checklist
+    type: checkboxes
+  - attributes:
+      description: |
+        Which packages cause the bug?
+        Please test using latest versions.
+        Example: `some-package@1.2.3`.
+      label: Affected package
     id: affected-versions
-    attributes:
-      label: Affected packages and versions
-      description: Please test using the latest version of the relevant packages to make sure your issue has not already been fixed.
+    type: input
     validations:
       required: true
-
-  - type: input
-    id: runnable-example
-    attributes:
-      label: Link to runnable example
+  - attributes:
       description: |
-        Link to repository or sandbox with runnable example of the issue.
+        How did this happen?
+
+        Provide a [minimal and reproducible example](https://stackoverflow.com/help/minimal-reproducible-example).
+        Link to a repository or sandbox or show the code here.
+        Remove everything that is not needed.
+        Use plain Node and npm if possible.
 
         Some starters:
 
         | description | codesandbox | stackblitz |
         | - | - | - |
-        | rehype (for html to html, with parse5) | [codesandbox](https://codesandbox.io/s/github/rehypejs/.github/tree/main/sandbox-templates/rehype-debug) | [stackblitz](https://stackblitz.com/github/rehypejs/.github/tree/main/sandbox-templates/rehype-debug) |
-        | rehype-dom (for html to html, with browser DOM) | [codesandbox](https://codesandbox.io/s/github/rehypejs/.github/tree/main/sandbox-templates/rehype-dom-debug) | [stackblitz](https://stackblitz.com/github/rehypejs/.github/tree/main/sandbox-templates/rehype-dom-debug) |
-
-        Alternatively, use the next section *Steps to reproduce*.
-    validations:
-      required: false
-
-  - type: textarea
-    id: steps-to-reproduce
-    attributes:
+        | `rehype` (for HTML to HTML, with `parse5`) | [codesandbox](https://codesandbox.io/s/github/rehypejs/.github/tree/main/sandbox-templates/rehype-debug) | [stackblitz](https://stackblitz.com/github/rehypejs/.github/tree/main/sandbox-templates/rehype-debug) |
+        | `rehype-dom` (for HTML to HTML, with browser DOM) | [codesandbox](https://codesandbox.io/s/github/rehypejs/.github/tree/main/sandbox-templates/rehype-dom-debug) | [stackblitz](https://stackblitz.com/github/rehypejs/.github/tree/main/sandbox-templates/rehype-dom-debug) |
       label: Steps to reproduce
-      description: How did this happen? Please provide a [minimal, reproducible example](https://stackoverflow.com/help/minimal-reproducible-example).
+    id: steps-to-reproduce
+    type: textarea
     validations:
       required: true
-
-  - type: textarea
-    id: expected-behavior
-    attributes:
-      label: Expected behavior
-      description: What should happen?
-    validations:
-      required: true
-
-  - type: textarea
-    id: actual-behavior
-    attributes:
+  - attributes:
+      description: |
+        What happens?
+        What is wrong with the current behavior?
       label: Actual behavior
-      description: What happens instead?
+    id: actual-behavior
+    type: textarea
     validations:
       required: true
-
-  - type: dropdown
-    id: javascript-runtime
-    attributes:
+  - attributes:
+      description: |
+        What should happen instead?
+        Why should that happen?
+        Why is that better than the current behavior?
+      label: Expected behavior
+    id: expected-behavior
+    type: textarea
+    validations:
+      required: true
+  - attributes:
       label: Runtime
       description: |
-        What JavaScript runtime are you using to build or run the code?
-        **Note**: for ECMASCript modules (ESM) in Node, at minimum Node.js 12.20, 14.14, or 16.0 is required.
-      multiple: true
-      options:
-        - Node v17
-        - Node v16
-        - Node v14
-        - Node v12
-        - Deno
-        - Electron
-        - Other (please specify in steps to reproduce)
+        What runtime are you using?
+        Please test using latest versions.
+        Example: `node@23.2.0` or `Chrome 131.0.6778.86`.
+    id: runtime
+    type: input
     validations:
       required: false
-
-  - type: dropdown
-    id: package-manager
-    attributes:
+  - attributes:
+      description: |
+        What package manager are you using?
+        Please test using latest versions.
+        Example: `npm@10.9.0`.
       label: Package manager
-      description: What package manager are you using?
-      multiple: true
-      options:
-        - npm 8
-        - npm 7
-        - npm 6
-        - yarn 3
-        - yarn 1
-        - pnpm
-        - Other (please specify in steps to reproduce)
+    id: package-manager
+    type: input
     validations:
       required: false
-
-  - type: dropdown
+  - attributes:
+      description: |
+        What operating system are you using?
+        Please test using latest versions.
+        Example: `macOS Sequoia 15.1.1`.
+      label: Operating system
     id: operating-system
-    attributes:
-      label: OS
-      description: What operating system are you using?
-      multiple: true
-      options:
-        - Windows
-        - Linux
-        - macOS
-        - Other (please specify in steps to reproduce)
+    type: input
     validations:
       required: false
-
-  - type: dropdown
-    id: build-tools
-    attributes:
+  - attributes:
+      description: |
+        What tools are used to build or bundle the project?
+        Please test using latest versions.
       label: Build and bundle tools
-      description: What, if any, tools are used to build or bundle the project?
       multiple: true
       options:
-        - Webpack
-        - Rollup
-        - esbuild
-        - Parcel
-        - Create React App
+        - Astro
+        - CRA (Create React App)
+        - Docusaurus
         - Gatsby
         - Next.js
+        - Parcel
         - Remix
-        - Docusaurus
-        - Snowpack
+        - Rollup
         - Vite
-        - Other (please specify in steps to reproduce)
+        - esbuild
+        - swc
+        - webpack
+        - other (please specify in steps to reproduce)
+    id: build-tools
+    type: dropdown
     validations:
       required: false
+description: Report a bug
+name: 🐛 Bug
