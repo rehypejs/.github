@@ -1,9 +1,4 @@
 {
-  "name": "rehype-dom-debug",
-  "version": "1.0.0",
-  "private": true,
-  "main": "src/index.ts",
-  "type": "module",
   "dependencies": {
     "rehype-dom": "^7.0.0"
   },
@@ -11,7 +6,12 @@
     "typescript": "^5.0.0",
     "vite": "^5.0.0"
   },
+  "main": "src/index.ts",
+  "name": "rehype-dom-debug",
+  "private": true,
   "scripts": {
     "start": "tsc && vite"
-  }
+  },
+  "type": "module",
+  "version": "1.0.0"
 }
