@@ -1,21 +1,11 @@
 {
-  "name": "github",
-  "private": true,
-  "version": "0.0.0",
-  "description": "Community health files",
-  "license": "CC-BY-4.0",
-  "keywords": [],
-  "repository": "rehypejs/.github",
-  "bugs": "https://github.com/rehypejs/.github",
   "author": "Titus Wormer <tituswormer@gmail.com> (wooorm.com)",
+  "bugs": "https://github.com/rehypejs/.github",
   "contributors": [
-    "Titus Wormer <tituswormer@gmail.com> (wooorm.com)",
-    "Christian Murphy (https://github.com/ChristianMurphy)"
+    "Christian Murphy (https://github.com/ChristianMurphy)",
+    "Titus Wormer <tituswormer@gmail.com> (wooorm.com)"
   ],
-  "workspaces": [
-    "sandbox-templates/rehype-debug/",
-    "sandbox-templates/rehype-dom-debug/"
-  ],
+  "description": "Community health files",
   "devDependencies": {
     "eslint-config-xo-react": "^0.27.0",
     "prettier": "^3.0.0",
@@ -24,10 +14,9 @@
     "remark-preset-wooorm": "^10.0.0",
     "xo": "^0.59.0"
   },
-  "scripts": {
-    "format": "remark --frail --quiet --output -- . && prettier --log-level warn --write -- . && xo --fix",
-    "test": "npm run format"
-  },
+  "keywords": [],
+  "license": "CC-BY-4.0",
+  "name": "github",
   "prettier": {
     "bracketSpacing": false,
     "semi": false,
@@ -36,6 +25,7 @@
     "trailingComma": "none",
     "useTabs": false
   },
+  "private": true,
   "remarkConfig": {
     "plugins": [
       "remark-frontmatter",
@@ -46,6 +36,12 @@
       ]
     ]
   },
+  "repository": "rehypejs/.github",
+  "scripts": {
+    "format": "remark --frail --quiet --output -- . && prettier --log-level warn --write -- . && xo --fix",
+    "test": "npm run format"
+  },
+  "version": "0.0.0",
   "xo": {
     "env": [
       "browser"
@@ -62,5 +58,9 @@
       }
     ],
     "prettier": true
-  }
+  },
+  "workspaces": [
+    "sandbox-templates/rehype-debug/",
+    "sandbox-templates/rehype-dom-debug/"
+  ]
 }
